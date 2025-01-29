@@ -72,9 +72,19 @@
         <area target="" alt="Dhule" title="Dhule" href="#info" coords="269,176,196,220" shape="rect">
         <area target="" alt="Nashik" title="Nashik" href="#info" coords="147,296,247,214" shape="rect">
         <area target="" alt="Ahmednagar" title="Ahmednagar" href="#info" coords="189,290,279,373" shape="rect">
-        <area target="" alt="Pune" title="Pune" href="#info" coords="146,357,224,423" shape="rect">
-        <area target="" alt="Mumbai City" title="Mumbai City" href="#info" coords="108,350,97,362" shape="rect">  
-        <!-- Add other areas here -->
+        <area target="" alt="Jalgaon" title="Jalgaon" href="#info" coords="337,235,270,180" shape="rect">
+<area target="" alt="Pune" title="Pune" href="#info" coords="146,357,224,423" shape="rect">
+    <area target="" alt="Satara" title="Satara" href="#info" coords="236,491,162,440" shape="rect">
+    <area target="" alt="Solapur" title="Solapur" href="#info" coords="344,491,260,427" shape="rect">
+    <area target="" alt="Sangil" title="Sangil" href="#info" coords="208,496,282,531" shape="rect">
+    <area target="" alt="Kolhapur" title="Kolhapur" href="#info" coords="215,615,172,521" shape="rect">
+<area target="" alt="Mumbai City" title="Mumbai City" href="#info" coords="108,350,97,362" shape="rect">  
+    <area target="" alt="Thane" title="Thane" href="#info" coords="144,332,93,273" shape="rect">
+    <area target="" alt="Mumbai Suburban" title="Mumbai Suburban" href="#info" coords="98,333,111,353" shape="rect">
+    <area target="" alt="Raigad" title="Raigad" href="#info" coords="101,359,134,438" shape="rect">
+    <area target="" alt="Ratnagiri" title="Ratnagiri" href="#info" coords="122,453,158,545" shape="rect">
+    <area target="" alt="Sindhudurg" title="Sindhudurg" href="#info" coords="138,563,173,617" shape="rect">
+    <!-- Add other areas here -->
     </map>
 
     <div id="district-info" class="animated-text">
@@ -82,68 +92,29 @@
         <p>Click on a district on the map to see the general soil information and common plants that grow well there.</p>
     </div>
 
-    <!-- Question section for user inputs -->
-    <div class="question-section">
-        <h3>Tell us more about your soil</h3>
-        <label for="soil-humidity">Soil Humidity (Low, Medium, High): </label>
-        <input type="text" id="soil-humidity" name="soil-humidity"><br><br>
 
-        <label for="soil-type">Soil Type (e.g., Black cotton, Red, Alluvial): </label>
-        <input type="text" id="soil-type" name="soil-type"><br><br>
-
-        <label for="terrain">General Terrain (e.g., Hilly, Flat, Mixed): </label>
-        <input type="text" id="terrain" name="terrain"><br><br>
-
-        <button onclick="recommendPlants()">Get Plant Recommendations</button>
-
-        <div id="recommendation" class="animated-text"></div>
-    </div>
 </section>
 
 <script>
     const districtData = {
-        "Nandurbar": {
-            "climate": "Hot Semi-Arid",
-            "soilType": "Black cotton soil",
-            "rainfall": "Low to moderate",
-            "moisture": "Medium moisture retention",
-            "trees": ["Custard Apple", "Ber", "Neem"]
-        },
-        "Dhule": {
-            "climate": "Hot Semi-Arid",
-            "soilType": "Black cotton soil",
-            "rainfall": "Low to moderate",
-            "moisture": "Medium moisture retention",
-            "trees": ["Tamarind", "Mango", "Neem"]
-        },
-        "Nashik": {
-            "climate": "Tropical Wet and Dry",
-            "soilType": "Black cotton soil",
-            "rainfall": "Moderate to high",
-            "moisture": "Good moisture retention",
-            "trees": ["Grapevine", "Neem", "Lemon"]
-        },
-        "Ahmednagar": {
-            "climate": "Hot Semi-Arid",
-            "soilType": "Black cotton soil",
-            "rainfall": "Low to moderate",
-            "moisture": "Medium moisture retention",
-            "trees": ["Custard Apple", "Ber", "Neem"]
-        },
-        "Pune": {
-            "climate": "Tropical Wet and Dry",
-            "soilType": "Black cotton soil",
-            "rainfall": "High during monsoon",
-            "moisture": "Good moisture retention",
-            "trees": ["Mango", "Neem", "Tamarind"]
-        },
-        "Mumbai City": {  
-        "climate": "Tropical Wet",  
-        "soilType": "Clayey soil",  
-        "rainfall": "High",  
-        "moisture": "High moisture retention",  
-        "trees": ["Rain Tree", "Gulmohar", "Coconut"]  
-      }
+{
+"Nandurbar": { "climate": "Hot Semi-Arid", "soilType": "Black cotton soil", "rainfall": "Low to moderate", "moisture": "Medium", "trees": ["Custard Apple", "Ber", "Neem"] },
+"Dhule": { "climate": "Hot Semi-Arid", "soilType": "Black cotton soil", "rainfall": "Low to moderate", "moisture": "Medium", "trees": ["Tamarind", "Mango", "Neem"] },
+"Nashik": { "climate": "Tropical Wet and Dry", "soilType": "Black cotton soil", "rainfall": "Moderate to high", "moisture": "Good", "trees": ["Grapevine", "Neem", "Lemon"] },
+"Ahmednagar": { "climate": "Hot Semi-Arid", "soilType": "Black cotton soil", "rainfall": "Low to moderate", "moisture": "Medium", "trees": ["Custard Apple", "Ber", "Neem"] },
+"Jalgaon": { "climate": "Tropical Wet and Dry", "soilType": "Black cotton soil", "rainfall": "Moderate", "moisture": "Medium", "trees": ["Banana", "Neem", "Tamarind"] },
+"Pune": { "climate": "Tropical Wet and Dry", "soilType": "Black cotton soil", "rainfall": "High during monsoon", "moisture": "Good", "trees": ["Mango", "Neem", "Tamarind"] },
+"Satara": { "climate": "Tropical Wet and Dry", "soilType": "Red and Lateritic", "rainfall": "Moderate to high", "moisture": "Medium", "trees": ["Mango", "Jackfruit", "Teak"] },
+"Solapur": { "climate": "Hot and Dry", "soilType": "Black and Red", "rainfall": "Low", "moisture": "Low", "trees": ["Neem", "Tamarind", "Babul"] },
+"Sangli": { "climate": "Tropical Wet and Dry", "soilType": "Black soil", "rainfall": "Moderate", "moisture": "Medium", "trees": ["Sugarcane", "Neem", "Mango"] },
+"Kolhapur": { "climate": "Tropical Wet and Dry", "soilType": "Red soil", "rainfall": "High", "moisture": "High", "trees": ["Areca Nut", "Teak", "Jackfruit"] },
+"Mumbai City": { "climate": "Tropical Wet", "soilType": "Clayey soil", "rainfall": "High", "moisture": "High", "trees": ["Rain Tree", "Gulmohar", "Coconut"] },
+"Thane": { "climate": "Tropical Wet and Dry", "soilType": "Lateritic soil", "rainfall": "High", "moisture": "High", "trees": ["Coconut", "Cashew", "Mango"] },
+"Mumbai Suburban": { "climate": "Tropical Wet", "soilType": "Clayey soil", "rainfall": "Very high", "moisture": "High", "trees": ["Coconut", "Rain Tree", "Gulmohar"] },
+"Raigad": { "climate": "Tropical Wet", "soilType": "Lateritic", "rainfall": "Very high", "moisture": "High", "trees": ["Coconut", "Mango", "Cashew"] },
+"Ratnagiri": { "climate": "Tropical Wet", "soilType": "Lateritic", "rainfall": "Very high", "moisture": "High", "trees": ["Mango", "Jackfruit", "Coconut"] },
+"Sindhudurg": { "climate": "Tropical Wet", "soilType": "Lateritic", "rainfall": "Very high", "moisture": "High", "trees": ["Coconut", "Cashew", "Mango"] }
+}
         // Add all other districts
     };
 
@@ -166,16 +137,7 @@
                 <p><strong>Trees That Grow Well:</strong> ${info.trees.join(', ')}</p>
             `;
         }
-    }
-
-    function recommendPlants() {
-        const humidity = document.getElementById('soil-humidity').value;
-        const soilType = document.getElementById('soil-type').value;
-        const terrain = document.getElementById('terrain').value;
-        const recommendation = `Based on your input (Humidity: ${humidity}, Soil Type: ${soilType}, Terrain: ${terrain}),
-        we recommend these trees for your area: ...`;
-
-        document.getElementById('recommendation').innerText = recommendation;
+    
     }
 </script>
 
